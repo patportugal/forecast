@@ -53,6 +53,13 @@ function formatDate(date) {
   return week + " " + hour + ":" + minutes;
 }
 
+function formatData(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
+
 function getForecast(city) {
   let apiKey = "753ef61a4c9704b0boa8ce19973atca6";
 
@@ -63,31 +70,38 @@ function getForecast(city) {
 function displayForecast(response) {
   console.log(response.data);
 
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
   let forecastHtml = "";
 
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        `
 <div class="linha">
                         <div class="weekDay">
                             <div class="icon-two">
-                                <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+                                <img src="${day.condition.icon_url}"
                                     alt="" width="55px">
                             </div>
                             <div class="detalhes">
                                 <div>
                                     <div class="day">
-                                        ${day}
+                                     ${formatData(day.time)}
                                     </div>
                                 </div>
                                 <div class="temperature-high">
                                     <span class="high">
-                                        11º
+                                       ${
+                                         Math.round(day.temperature.maximum) +
+                                         "º"
+                                       }
                                     </span>
                                     <span class="low">
-                                        7º
+                                           ${
+                                             Math.round(
+                                               day.temperature.minimum
+                                             ) + "º"
+                                           }
                                     </span>
                                 </div>
                             </div>
@@ -95,6 +109,7 @@ function displayForecast(response) {
                         <hr />
  </div>
 `;
+    }
   });
   let forecast = document.querySelector("#forecast");
   forecast.innerHTML = forecastHtml;
