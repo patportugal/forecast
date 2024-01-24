@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> weather_app☀️</title>
+    <link rel="stylesheet" href="app/style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="all-around">
+
+        <div class="divider">
+
+            <div class="one">
+
+                <form id="search-form">
+                    <span class="form" width="100%">
+                        <input type="search" placeholder="Enter a city.." id="search-input">
+                        <input type="submit" value="search" id="search">
+                    </span>
+                </form>
+
+            </div>
+            <div class="two">
+                <div class="currentCity">
+                    <div class="bigNumber">
+                        <div id="icon"> </div>
+
+                        <span class="temperature">
+
+
+
+                            <span id="current-temperature"> 8</span>
+                            <span class="unit"> <sup> ºC</sup></span>
+                        </span>
+
+                    </div>
+                    <span class="details">
+
+                        <h1 id="current-city">
+                            San Francisco
+                        </h1>
+                        <h2>
+                            <span id="time">Sunday 18:43, </span> <span id="description">
+
+                            </span>
+                            <br />
+
+                            Humidity: <span class="red" id="humidity"> 65% </span> , Wind: <span class="red" id="wind">
+                                4.12</span>
+                        </h2>
+
+                    </span>
+                </div>
+
+            </div>
+            <!-- <div class="weekDay">
+
+            <div class="day">
+                Sun ☀️
+            </div>
+
+            <div class="temperature">
+                <span class="high">
+                    11º
+                </span>
+                <span class="low">
+                    7º
+                </span>
+            </div>
+
+            <div class="day">
+                Mon ☁️
+            </div>
+
+            <div class="temperature">
+                <span class="high">
+                    11º
+                </span>
+                <span class="low">
+                    8º
+                </span>
+            </div>
+
+            <div class="day">
+                Tue 🌧️
+            </div>
+
+            <div class="temperature">
+                <span class="high">
+                    13º
+                </span>
+                <span class="low">
+                    9º
+                </span>
+            </div>
+
+            <div class="day">
+                Wed 🌧️
+            </div>
+
+            <div class="temperature">
+                <span class="high">
+                    12º
+                </span>
+                <span class="low">
+                    8º
+                </span>
+            </div>
+
+            <div class="day">
+                Thu ☀️
+            </div>
+
+            <div class="temperature">
+                <span class="high">
+                    11º
+                </span>
+                <span class="low">
+                    6º
+                </span>
+            </div>
+
+        </div> -->
+        </div>
+
+    </div>
+    <div class="rodape">
+
+        <footer>
+            This project was coded by Patricia and is open-sourced on <a href="https://github.com/patportugal/met"
+                target="_blank"> Github</a> and
+            hosted
+            on <a href="https://golden-frangollo-407157.netlify.app/" target="_blank">Netlify</a>
+
+
+        </footer>
+    </div>
+
+
+    <script src="app/script.js"> </script>
+</body>
+
+</html>
