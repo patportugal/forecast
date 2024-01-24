@@ -21,15 +21,16 @@ function displayTemperature(response) {
   getForecast(response.data.city);
 }
 
-function search(event) {
-  event.preventDefault();
-  let searchInputElement = document.querySelector("#search-input");
-  let city = searchInputElement.value;
-
+function searchCity(city) {
   let apiKey = `753ef61a4c9704b0boa8ce19973atca6`;
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=753ef61a4c9704b0boa8ce19973atca6&units=metric`;
 
   axios.get(apiUrl).then(displayTemperature);
+}
+
+function search(event) {
+  event.preventDefault();
+  let searchInputElement = document.querySelector("#search-input");
 }
 
 function formatDate(date) {
@@ -62,7 +63,7 @@ function formatData(timestamp) {
 
 function getForecast(city) {
   let apiKey = "753ef61a4c9704b0boa8ce19973atca6";
-
+  // city = `Cologne`;
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=753ef61a4c9704b0boa8ce19973atca6&units=metric`;
   axios(apiUrl).then(displayForecast);
 }
@@ -114,3 +115,6 @@ function displayForecast(response) {
   let forecast = document.querySelector("#forecast");
   forecast.innerHTML = forecastHtml;
 }
+
+getForecast("cologne");
+searchCity("cologne");
