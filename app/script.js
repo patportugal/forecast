@@ -18,6 +18,7 @@ function displayTemperature(response) {
   temperatureElement.innerHTML = temperature;
   let date = new Date(response.data.time * 1000);
   dayTime.innerHTML = formatDate(date);
+  getForecast(response.data.city);
 }
 
 function search(event) {
@@ -52,7 +53,16 @@ function formatDate(date) {
   return week + " " + hour + ":" + minutes;
 }
 
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "753ef61a4c9704b0boa8ce19973atca6";
+
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=753ef61a4c9704b0boa8ce19973atca6&units=metric`;
+  axios(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
+
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
   let forecastHtml = "";
 
@@ -89,5 +99,3 @@ function displayForecast() {
   let forecast = document.querySelector("#forecast");
   forecast.innerHTML = forecastHtml;
 }
-
-displayForecast();
