@@ -164,3 +164,40 @@ hr {
 #current-temperature {
   margin-right: 0;
 }
+
+.weekDay {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.detalhes {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.day {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.temperature-high {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  font-size: 16px;
+  margin-right: 30px;
+}
+
+.low {
+  margin-left: 10px;
+  opacity: 70%;
+}
+
+hr {
+  margin-left: 40px;
+}
