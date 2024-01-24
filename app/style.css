@@ -181,7 +181,7 @@ hr {
 }
 
 .day {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
 }
 
@@ -200,4 +200,13 @@ hr {
 
 hr {
   margin-left: 40px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-width: 0.2px;
+  color: #2e2e2e;
+}
+
+.coluna {
+  display: flex;
+  flex-direction: column;
 }

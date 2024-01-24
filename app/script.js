@@ -51,3 +51,43 @@ function formatDate(date) {
 
   return week + " " + hour + ":" + minutes;
 }
+
+function displayForecast() {
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+<div class="linha">
+                        <div class="weekDay">
+                            <div class="icon-two">
+                                <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+                                    alt="" width="55px">
+                            </div>
+                            <div class="detalhes">
+                                <div>
+                                    <div class="day">
+                                        ${day}
+                                    </div>
+                                </div>
+                                <div class="temperature-high">
+                                    <span class="high">
+                                        11º
+                                    </span>
+                                    <span class="low">
+                                        7º
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+ </div>
+`;
+  });
+  let forecast = document.querySelector("#forecast");
+  forecast.innerHTML = forecastHtml;
+}
+
+displayForecast();
